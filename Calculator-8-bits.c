@@ -54,6 +54,47 @@ void main() {
         PORTC= 0x7E;
         PORTD= 0x7E;
         
+        while(1){                                        //loop of program
+            
+            if (RE0==1){                        // Button1 was push for  
+                while(RE0==1){};                     //mientras estè presionado no hace nada y no continua hasta que se suelte el pulsador     
+            
+            num1=PORTB;                      // condicional verdadera, se almacena en variable num1 el numero ingresado en PORTB
+            show_number(num1);            //Funcion para mostrar el numero ingresado.
+            }           
+     
+            if (RE0==1){                        //detectar si se ha presionado el pulsador RE0 de ingreso de bits
+                while(RE0==1){};                //mientras estè presionado no hace nada y no continua hasta que se suelte el pulsador
+            
+            num2=PORTB;                     //condicional verdadera, se almacena en variable num2 el numero ingresado en PORTB
+            show_number(num2);           //Funcion para mostrar el numero ingresado.
+            }                                   
+                     
+            if (RE1==1){                         // Detectar si se ha presionado RE1 operacion suma
+                while(RE1==1){};                   //mientras estè presionado no hace nada y no continua hasta que se suelte el pulsador
+  
+            int resultado= num1+num2;       //RE1 pulsado, se realiza la suma de num1 y num2
+            show_number(resultado);       //se muestra en los display el resultado de la suma
+            }
+                     
+            if (RE2==1){                        // Detectar si se ha presionado RE2 operacion resta
+                while(RE2==1){};    
+                 
+            int resultado_R=num1-num2;      //RE2 pulsado, se realiza la reste de num1 y num2
+            show_number(resultado_R);    //se muestra en los display el resultado de resta.
+ 
+                if(num2>num1){                  //Evaluar numeros para indicar signo negativo,
+                    RD7=1;                  
+                }            
+            }
+                       
+            if (RC7==1){                        // Detectar si se ha presionado RC7 nueva operacion
+                while(RC7==1){};
+            return;               
+            }          
+        }   
+        
+    return;   
 }
 
 void show_number(int num){                          //Implementation function show_number
