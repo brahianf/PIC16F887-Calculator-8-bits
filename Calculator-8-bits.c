@@ -24,3 +24,12 @@
 
  * Created on 6 de marzo de 2019, 05:47 PM
  */
+
+#include <stdio.h>
+#include <xc.h>
+#include <pic16f887.h>
+#include "config.h"
+
+
+void show_number(int num);
+int table_display(int c);
