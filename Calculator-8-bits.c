@@ -53,5 +53,19 @@ void main() {
         PORTA= 0x7E;                                     // Displays started "0".
         PORTC= 0x7E;
         PORTD= 0x7E;
+        
+}
 
+void show_number(int num){                          //Implementation function
+    
+    int un,dec,cen;                                 //Declare var un, dec, cen
+      
+    cen=(int)((num/100));  
+        PORTA=tabla_display(cen);
+    
+    dec=(int)((num-(cen*100))/10);
+        PORTC=tabla_display(dec);
+        
+    un=(int)(num%10);
+        PORTD=tabla_display(un);
 }
